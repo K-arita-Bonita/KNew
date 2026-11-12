@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Ofertas | K-arita Bonita</title>
+
+  <meta name="description"
+        content="Descubre las ofertas especiales de belleza coreana en K-arita Bonita.">
+
+  <link rel="stylesheet" href="Style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="pagina-ofertas">
+
+  <!-- ENCABEZADO -->
+  <header class="header">
+
+    <a href="index.html" class="logo-text">
+      K-arita Bonita
+    </a>
+
+    <p class="subtitulo">
+      Skincare coreano para una piel sana, glowy y hermosa ✨
+    </p>
+
+    <nav class="menu-principal">
+  <a href="NewKB.html">Inicio</a>
+
+<a href="NewKB.html#categorias">Categorías</a>
+
+<a href="catalogo.html">Catálogo</a>
+
+<a href="NewKB.html#masVendidos">Más vendidos</a>
+
+<a href="test-piel.html">Test de piel</a>
+</nav>
+
+  </header>
+
+  <!-- PRESENTACIÓN DE OFERTAS -->
+  <section class="ofertas-hero">
+
+    <span class="ofertas-etiqueta">
+      K-BEAUTY SPECIAL OFFERS
+    </span>
+
+    <h1>Ofertas especiales</h1>
+
+    <p>
+      Tus productos favoritos de belleza coreana
+      a precios irresistibles.
+    </p>
+
+    <a href="NewKB.html" class="volver-tienda">
+  ← Volver a la tienda
+</a>
+
+  </section>
+
+  <!-- CATÁLOGO DE OFERTAS -->
+  <section id="catalogo" class="catalogo-ofertas">
+
+    <div class="encabezado-catalogo">
+
+      <span class="etiqueta-seccion">
+        SPECIAL PRICES
+      </span>
+
+      <h2>Descubre nuestras promociones</h2>
+
+    </div>
+
+    <div id="productos"></div>
+
+  </section>
+
+<!-- BOTÓN CARRITO -->
+<div id="btnCarrito" onclick="abrirCarrito()">
+
+  🛒
+
+  <span id="contadorCarrito">0</span>
+
+</div>
+
+  
+  <!-- MODAL CARRITO -->
+<div id="modalCarrito" class="modal">
+
+  <div class="modal-content">
+
+    <span id="cerrarCarrito">✖</span>
+
+    <h2>Tu carrito</h2>
+
+    <div id="listaCarrito"></div>
+
+    <button onclick="enviarWhatsApp()">
+      Pedir por WhatsApp
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- MODAL DETALLE DE PRODUCTO -->
+<div id="modalDetalle" class="modal">
+
+  <div class="modal-content">
+
+    <span id="cerrarDetalle">✖</span>
+
+    <div id="contenidoDetalle"></div>
+
+  </div>
+
+</div>
+  
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="NewKB.js"></script>
+
+</body>
+</html>
