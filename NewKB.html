@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>K-arita Bonita | Skincare coreano</title>
+
+  <meta name="description" content="Descubre skincare coreano para una piel sana, glowy y hermosa.">
+
+  <link rel="stylesheet" href="Style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ENCABEZADO -->
+  <header class="header">
+
+    <a href="#" class="logo-text">
+      K-arita Bonita
+    </a>
+
+    <p class="subtitulo">
+      Skincare coreano para una piel sana, glowy y hermosa ✨
+    </p>
+
+    <nav class="menu-principal">
+      <a href="NewKB.html">Inicio</a>
+
+<a href="NewKB.html#categorias">Categorías</a>
+
+<a href="catalogo.html">Catálogo</a>
+
+<a href="NewKB.html#masVendidos">Más vendidos</a>
+
+<a href="test-piel.html">Test de piel</a>
+    </nav>
+
+        <!-- BUSCADOR EXPANDIBLE -->
+    <div class="buscador-header" id="buscadorHeader">
+
+      <button
+        type="button"
+        class="boton-lupa"
+        id="botonLupa"
+        onclick="alternarBuscador()"
+        aria-label="Abrir buscador"
+        aria-expanded="false">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="m20 20-4-4"></path>
+        </svg>
+      </button>
+
+      <input
+        type="search"
+        id="busqueda"
+        placeholder="Buscar productos..."
+        aria-label="Buscar productos"
+        oninput="filtrar()"
+      >
+
+    </div>
+    
+  </header>
+
+
+  <!-- INFORMACIÓN DEL PEDIDO -->
+  <section id="infoPedido"></section>
+
+
+  <!-- BANNER PRINCIPAL -->
+  <section class="banner-principal">
+
+    <div class="banner-contenido">
+
+      <span class="banner-etiqueta">
+        K-BEAUTY COLLECTION
+      </span>
+
+      <h1>
+        Tu piel merece<br>
+        un momento especial
+      </h1>
+
+      <p>
+        Descubre el cuidado coreano que tu piel necesita.
+      </p>
+
+      <a href="catalogo.html" class="btn-banner">
+  Catálogo →
+</a>
+
+      <div class="banner-beneficios">
+
+  <div class="beneficio-item">
+    <span>🚚</span>
+    <small>Envíos a todo México</small>
+  </div>
+
+  <div class="beneficio-item">
+    <span>🔒</span>
+    <small>Compra segura</small>
+  </div>
+
+</div>
+
+    </div>
+
+    <div class="banner-imagen">
+  <img
+    src="banner-productos.png"
+    alt="Colección de productos de belleza coreanos"
+  >
+</div>
+    
+  </section>
+
+
+  <!-- CATEGORÍAS -->
+  <!-- CATEGORÍAS PRINCIPALES -->
+<section id="categorias" class="seccion-categorias">
+
+  <h2>Explora por categoría</h2>
+
+  <p class="descripcion-seccion">
+    Descubre todo lo que tenemos para ti.
+  </p>
+
+  <div class="categorias-grid">
+
+    <button
+      type="button"
+      onclick="seleccionarCategoriaPrincipal('Skincare')">
+      <span>🧴</span>
+      Skincare
+    </button>
+
+    <button
+      type="button"
+      onclick="seleccionarCategoriaPrincipal('Makeup')">
+      <span>💄</span>
+      Makeup
+    </button>
+
+    <button
+      type="button"
+      onclick="seleccionarCategoriaPrincipal('Cuidado capilar')">
+      <span>💆🏻‍♀️</span>
+      Cuidado capilar
+    </button>
+
+  </div>
+
+</section>
+
+<!-- BANNER DE OFERTAS -->
+<section class="banner-ofertas">
+
+  <div class="ofertas-contenido">
+
+    <span class="ofertas-etiqueta">
+      K-BEAUTY SPECIAL OFFERS
+    </span>
+
+    <h2>
+      Renueva tu rutina con los mejores descuentos
+    </h2>
+
+    <p>
+      Descubre tus favoritos de belleza coreana
+      a precios especiales.
+    </p>
+
+    <a href="ofertas.html" class="btn-ofertas">
+  Ver ofertas →
+</a>
+
+  </div>
+
+  <div class="ofertas-decoracion" aria-hidden="true">
+    ✨
+  </div>
+
+</section>
+
+<!-- MÁS VENDIDOS -->
+<section id="masVendidos" class="seccion-mas-vendidos">
+
+  <div class="mas-vendidos-encabezado">
+    <div>
+      <span class="etiqueta-seccion">K-BEAUTY FAVORITES</span>
+      <h2>✨ Más vendidos</h2>
+    </div>
+
+    <div class="mas-vendidos-flechas">
+      <button type="button" onclick="deslizarMasVendidos(-1)" aria-label="Anterior">
+        ‹
+      </button>
+      <button type="button" onclick="deslizarMasVendidos(1)" aria-label="Siguiente">
+        ›
+      </button>
+    </div>
+  </div>
+
+  <div id="listaMasVendidos" class="mas-vendidos-carrusel"></div>
+
+</section>
+
+    <!-- RUTINAS K-BEAUTY -->
+<section id="rutinasKBeauty" class="seccion-rutinas">
+
+  <div class="rutinas-encabezado">
+    <span class="etiqueta-seccion">
+      YOUR SKINCARE RITUAL
+    </span>
+
+    <h2>Rutinas K-Beauty ♡</h2>
+
+    <p>
+      Descubre nuestros rituales de cuidado
+      con precios especiales.
+    </p>
+  </div>
+
+  <div class="rutinas-carrusel-contenedor">
+
+  <button
+    class="rutinas-flecha"
+    type="button"
+    onclick="deslizarRutinas(-1)"
+    aria-label="Ver rutinas anteriores">
+    ‹
+  </button>
+
+  <div id="listaRutinas" class="rutinas-grid"></div>
+
+  <button
+    class="rutinas-flecha"
+    type="button"
+    onclick="deslizarRutinas(1)"
+    aria-label="Ver siguientes rutinas">
+    ›
+  </button>
+
+</div>
+
+</section>
+
+  <!-- MARCAS DESTACADAS -->
+<section class="marcas-destacadas">
+
+  <span class="etiqueta-seccion">
+    DISCOVER OUR BRANDS
+  </span>
+
+  <h2>Marcas que amamos</h2>
+
+  <p>Descubre tus favoritos del K-Beauty</p>
+
+  <div class="marcas-grid">
+
+    <a href="catalogo.html?marca=SKIN%201004">SKIN1004</a>
+    <a href="catalogo.html?marca=ANUA">ANUA</a>
+    <a href="catalogo.html?marca=COSRX">COSRX</a>
+    <a href="catalogo.html?marca=BEAUTY%20OF%20JOSEON">BEAUTY OF JOSEON</a>
+    <a href="catalogo.html?marca=MEDICUBE">MEDICUBE</a>
+    <a href="catalogo.html?marca=TOCOBO">TOCOBO</a>
+
+  </div>
+
+</section>
+
+  <!-- BENEFICIOS K-ARITA BONITA -->
+<section class="experiencia-beneficios">
+
+  <div class="experiencia-encabezado">
+    <span class="etiqueta-seccion">
+      THE K-ARITA BONITA EXPERIENCE
+    </span>
+
+    <h2>Más que skincare, una experiencia bonita ♡</h2>
+
+    <p>Pequeños detalles que hacen especial cada compra.</p>
+  </div>
+
+  <div class="experiencia-grid">
+
+    <!-- GLOW CARD -->
+    <div class="experiencia-card">
+      <span class="experiencia-icono">🎁</span>
+
+      <h3>Glow Card</h3>
+
+      <p>
+        ¡Tus compras tienen recompensa!
+      </p>
+
+      <p><strong>5 compras:</strong> 15% de descuento</p>
+      <p><strong>10 compras:</strong> un producto sorpresa</p>
+    </div>
+
+    <!-- WHATSAPP -->
+    <div class="experiencia-card">
+      <span class="experiencia-icono">💌</span>
+
+      <h3>Estamos para ti</h3>
+
+      <p>
+        ¿Tienes dudas sobre algún producto o tu pedido?
+        Nos encantará ayudarte.
+      </p>
+
+      <a href="#" class="experiencia-enlace"
+         onclick="event.preventDefault(); enviarConsulta();">
+        Escríbenos por WhatsApp →
+      </a>
+    </div>
+
+    <!-- ENVÍOS -->
+    <div class="experiencia-card">
+      <span class="experiencia-icono">📦</span>
+
+      <h3>Belleza coreana hasta tu puerta</h3>
+
+      <p>
+        Enviamos a todo México para que disfrutes
+        tus favoritos de K-Beauty donde estés.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+  <!-- BENEFICIOS DE LA TIENDA -->
+  <section class="beneficios-tienda">
+
+    <h2>Tu experiencia K-arita Bonita</h2>
+
+    <div class="beneficios-grid">
+
+      <div>
+        <span>🇰🇷</span>
+        <h3>Beauty from Korea</h3>
+        <p>Productos de belleza coreana.</p>
+      </div>
+
+      <div>
+        <span>💗</span>
+        <h3>Atención personalizada</h3>
+        <p>Te ayudamos a elegir tu rutina.</p>
+      </div>
+
+      <div>
+        <span>📦</span>
+        <h3>Entrega segura</h3>
+        <p>Información clara sobre tus pedidos.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="footer">
+
+    <h2>K-arita Bonita</h2>
+
+    <p>
+      Skincare coreano para una piel sana,
+      glowy y hermosa ✨
+    </p>
+
+    <p>
+      ¿Tienes dudas? Escríbenos por WhatsApp.
+    </p>
+
+    <span>© K-arita Bonita</span>
+
+  </footer>
+
+
+  <!-- BOTÓN WHATSAPP -->
+  <a id="btnWhatsApp" href="#">
+    💬
+  </a>
+
+
+  <!-- BOTÓN CARRITO -->
+  <div id="btnCarrito" onclick="abrirCarrito()">
+
+    🛒
+
+    <span id="contadorCarrito">0</span>
+
+  </div>
+
+
+  <!-- MODAL CARRITO -->
+  <div id="modalCarrito" class="modal">
+
+    <div class="modal-content">
+
+      <span id="cerrarCarrito">✖</span>
+
+      <h2>Tu carrito</h2>
+
+      <div id="listaCarrito"></div>
+
+      <button onclick="enviarWhatsApp()">
+        Pedir por WhatsApp
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- MODAL DETALLE DE PRODUCTO -->
+  <div id="modalDetalle" class="modal">
+
+    <div class="modal-content">
+
+      <span id="cerrarDetalle">✖</span>
+
+      <div id="contenidoDetalle"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- NOTIFICACIONES -->
+  <div id="toast"></div>
+
+<!-- MODAL DE INSTRUCCIONES K-BEAUTY -->
+<div id="modalUsoRutina" class="modal-uso-rutina" hidden>
+
+  <div class="modal-uso-contenido"
+       role="dialog"
+       aria-modal="true"
+       aria-labelledby="tituloUsoRutina">
+
+    <button
+      class="cerrar-uso-rutina"
+      type="button"
+      onclick="cerrarUsoRutina()"
+      aria-label="Cerrar instrucciones">
+      ×
+    </button>
+
+    <span class="etiqueta-seccion">
+      YOUR SKINCARE RITUAL
+    </span>
+
+    <h2 id="tituloUsoRutina"></h2>
+
+    <div class="uso-rutina-pestanas">
+      <button
+        id="botonRutinaDia"
+        type="button"
+        onclick="cambiarMomentoRutina('dia')">
+        ☀️ Mañana
+      </button>
+
+      <button
+        id="botonRutinaNoche"
+        type="button"
+        onclick="cambiarMomentoRutina('noche')">
+        🌙 Noche
+      </button>
+    </div>
+
+    <ol id="pasosUsoRutina"></ol>
+
+    <p id="notasUsoRutina"></p>
+
+  </div>
+
+</div>
+  
+  <!-- LIBRERÍAS -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+  <script src="NewKB.js"></script>
+
+</body>
+</html>
